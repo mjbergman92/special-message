@@ -4,24 +4,46 @@
     <meta charset="UTF-8">
     <title>Special Message</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap');
+
         body, html {
             height: 100%;
             margin: 0;
             display: flex;
             align-items: center;
             justify-content: center;
-            background-color: #FAFAFA;
-            font-family: Arial, sans-serif;
+            background: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
+            font-family: 'Kaushan Script', cursive;
         }
 
         h1 {
             color: #333;
             font-size: 50px;
             text-align: center;
+            border: none;
+            opacity: 0;
+            transition: opacity 2s;
+            animation: typing 3.5s steps(40, end), blink-caret .5s step-end infinite;
+        }
+
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: #333; }
         }
     </style>
 </head>
 <body>
     <h1>Jael, will you go out with me?</h1>
+
+    <script>
+        window.onload = function () {
+            document.querySelector('h1').style.opacity = '1';
+        }
+    </script>
 </body>
 </html>
